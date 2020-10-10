@@ -1,4 +1,4 @@
-Simple font editor for small pixel fonts with 16bit color palette
+#### Simple font editor for small pixel fonts with 16bit color palette
 Features:
 - Save as xml
 - Export as cpp file for use with the "Adafruit GFX Graphics Library" 
