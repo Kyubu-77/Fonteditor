@@ -1,0 +1,28 @@
+﻿#pragma once
+
+#include "BitmapFont.h"
+
+const uint8_t {{{NAME_PALETTE_ARRAY}}}[] = {
+{{{COLOR_ENTRIES}}}
+};
+
+const uint8_t {{{NAME_BITMAP_ARRAY}}}[] PROGMEM = {
+{{{BITMAP_ARRAY}}}
+};
+
+const uint8_t {{{NAME_GLYPH_ENTRIES_LENGTH}}} = {{{GLYPH_ENTRIES_LENGTH}}};
+const Glyph {{{NAME_GLYPH_ARRAY}}}[] PROGMEM = {
+{{{GLYPH_ENTRIES}}}
+};
+
+const BitmapFont {{{FONT_NAME}}} PROGMEM = {
+	{{{NAME_PALETTE_ARRAY_REF}}}
+	{{{PALETTE_SIZE}}}
+	{{{NAME_BITMAP_ARRAY_REF}}}
+	{{{YADVANCE}}}		
+	{{{NAME_GLYPH_ARRAY_REF}}}
+	{{{GLYPH_ENTRIES_LENGTH}}}
+};
+
+
+
