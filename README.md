@@ -1,23 +1,25 @@
-Simple font editor for small pixel fonts with 16bit color palette
-Features:
+#### Simple font editor for small pixel fonts with 8bit color palette
+
+**Features**
 - Save as xml
 - Export as cpp file for use with the "Adafruit GFX Graphics Library" 
 - Create character from installed font
-- Paint a character 
+- Paint a character pixelwise
 - Add greeble to font (need it for my Arduino matrix screen saver)
 
 Attention: there is no "UNDO" feature
 
-	
-Structure:
-One font can be edited at the same time. A font consists of several sizes and each size of several characters. Two sizes may have different character sets. 
+**Structure**
+One *font* can be edited at the same time. A font consists of several *sizes* and each size of several *characters*. Two sizes may have different character sets. 
 
-Workflow:
-1. Create font and change name within "Font" group
+**Workflow**
+![Fonteditor screenshot](./screenshot.png "Fonteditor")
 
-2. Add size to font, size can be named and sized in the "Size" group
+1. Create *font* and change name within "Font" group
 
-3. Character can now be added in two ways 
+2. Add a *size* to the *font*, size can be named and sized in the "Size" group
+
+3. A *character* can now be added in two ways 
    A. To add an empty character 
       - Press the "Add Character button" and paint the character in the "character group"
 	  - The color can be selected on the palette
@@ -25,24 +27,25 @@ Workflow:
       - Mark the "Active" check box, the "Preview Char" should be visible in the edit box
 	  - Adjust the Letter, Font, Size and Offset until the character fits into the red frame.
 	  - Once the preview is ok, either add (or overwrite current character) with the "Preview Char" or 
-	    add a character range (e.g. a-z)
+	    add a character range (e.g. A-Z)
 	  - disable the "preview" check box
-	  - the character can also be edit after wards (during preview editing is disabled)
+	  - the character can also be edited after wards (during preview editing is disabled)
 
-Character sizing
+**Character sizing**
 The size of an character can be modified independent from the size setting. There fore just modify the W and H textboxes in the 
 "Character group" and press "Resize". I recommend to make copy of the character before.
 
-Palette 
+**Palette**
 - Foreground and Background for character editing can be changed with help of the palette.
 - However, the palette is not stored nor exported (in the cpp file a default grayscale palette is added)
 - "Palette up" and "Palette down" adds or decrements 1 from the character pixels half byte.
 
-Greeble
+**Greeble**
 - Adding greeble adds a random value between -2 and +2 to roughly 70% of the charcters pixels
 
-Load/Save
-Sample: 
+**Load/Save**
+[Savefile format](./Sample/A_Z.xml): 
+```xml
 <Font Name="new 7224">
     <Sizes>
         <Size Name="new_Size" Width="10" Height="10" PreviewFontFamilyName="Arial" PreviewFontSize="7" PreviewFontBold="False" PreviewFontItalic="False" PreviewOffsetX="-1" PreviewOffsetY="-2" PreviewChar="X" PalletteForegroundRed="0" PalletteForegroundGreen="0" PalletteForegroundBlue="0" PalletteBackgroundRed="255" PalletteBackgroundGreen="255" PalletteBackgroundBlue="255" GenBasePaletteIndex="15">
@@ -54,8 +57,11 @@ Sample:
         </Size>
     </Sizes>
 </Font>
+```
 
 Export to cpp
+[CPP export format](./Sample/A_Z.cpp): 
+```cpp
 #pragma once
 
 #include "BitmapFont.h"
@@ -106,5 +112,5 @@ const BitmapFont new_Size PROGMEM = {
 	new_Size_GlyphData,                                  
 	1
 };
-
+```
 
