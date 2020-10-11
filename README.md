@@ -13,7 +13,7 @@ Attention: there is no "UNDO" feature
 One *font* can be edited at the same time. A font consists of several *sizes* and each size of several *characters*. Two sizes may have different character sets. 
 
 **Workflow**
-![Fonteditor screenshot](./screenshot.png "Fonteditor")
+![Fonteditor screenshot](/Screenshot.png?raw=true "Fonteditor")
 
 1. Create *font* and change name within "Font" group
 
